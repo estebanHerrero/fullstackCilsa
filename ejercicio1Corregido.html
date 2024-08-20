@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Formulario Personalizado</title>
+    <style>
+        .form-dark {
+            background-color: #222;
+            color: #fff;
+        }
+
+        .form-dark input,
+        .form-dark textarea,
+        .form-dark select {
+            background-color: #707070;
+            border-color: #444;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mx-auto">
+        <h1 class="text-4xl text-center p-8 mx-auto text-gray-900 font-bold">Formulario de Datos Personales</h1>
+
+        <div id="form-container" class="w-96 mx-auto">
+            <form class="form-light w-96 text-gray-800 mx-auto p-4 rounded-md border border-indigo-500">
+                <label for="nombre" class="block text-sm font-medium text-gray-700">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" class="mt-1 block w-full rounded-md border border-gray-300 shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" required pattern="[A-Za-z]+"><br>
+    
+                <label for="apellido" class="block text-sm font-medium text-gray-700">Apellido:</label>
+                <input type="text" id="apellido" name="apellido" class="mt-1 block w-full rounded-md border border-gray-300 shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" required pattern="[A-Za-z]+"><br>
+    
+                <label for="email" class="block text-sm font-medium text-gray-700">Email:</label>
+                <input type="email" id="email" name="email" class="mt-1 block w-full rounded-md border  border-gray-300 shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"><br>
+    
+                <label for="fechadeNacimiento" class="block text-sm font-medium text-gray-700">Fecha de Nacimiento:</label>
+                <input type="date" id="fechadeNacimiento" name="fechadeNacimiento" class="mt-1 block w-full rounded-md border border-gray-300 shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"><br>
+    
+                <label for="pais" class="block text-sm font-medium text-gray-700">País de Residencia:</label>
+                <input type="text" id="país" name="país" class="mt-1 block w-full rounded-md border border-gray-300 shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" required pattern="[A-Za-z]+"><br>
+    
+                <button type="submit" class="inline-flex items-center   
+                 bg-indigo-500 w-full py-2 justify-center border border-transparent rounded-md font-medium text-white hover:bg-indigo-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Enviar</button>
+                </form>
+
+            <form class="form-dark hidden mx-auto p-8  bg-gray-700 rounded" id="form">
+            <label for="nombre" class="block text-sm font-medium text-white">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" class="mt-1 block w-full rounded-md border border-gray-300 shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-300 sm:text-sm" required pattern="[A-Za-z]+"><br>
+
+            <label for="apellido" class="block text-sm font-medium text-white">Apellido:</label>
+            <input type="text" id="apellido" name="apellido" class="mt-1 block w-full rounded-md border border-gray-300 shadow-sm focus:outline-none focus:ring-yellow-300 focus:border-yellow-300 sm:text-sm" required pattern="[A-Za-z]+"><br>
+
+            <label for="email" class="block text-sm font-medium text-white">Email:</label>
+            <input type="email" id="email" name="email" class="mt-1 block w-full rounded-md border border-gray-300 shadow-sm focus:outline-none focus:ring-yellow-300 focus:border-yellow-300 sm:text-sm" required 
+            ><br>
+            
+
+            <label for="fechadeNacimiento" class="block text-sm font-medium text-white">Fecha de Nacimiento:</label>
+            <input type="date" id="fechadeNacimiento" name="fechadeNacimiento" class="mt-1 block w-full rounded-md border border-gray-300 shadow-sm focus:outline-none focus:ring-yellow-300 focus:border-yellow-300 sm:text-sm" required><br>
+
+            <label for="pais" class="block text-sm font-medium text-white">País de Residencia:</label>
+            <input type="text" id="país" name="país" class="mt-1 block w-full rounded-md border border-gray-300 shadow-sm focus:outline-none focus:ring-yellow-300 focus:border-yellow-300 sm:text-sm" required pattern="[A-Za-z]+"><br>
+
+            <button type="submit" class="inline-flex items-center  
+            px-4 py-1 bg-yellow-400 border border-transparent rounded-md font-medium text-black hover:bg-yellow-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 w-full justify-center cursor-pointer ">Enviar</button>
+            </form>
+        </div>
+
+        <div class="flex justify-center mt-4 py-12">
+            <button class="bg-yellow-400 hover:bg-yellow-500 text-black py-2 px-4 rounded text-center mr-4 boton-normal">Botón normal</button>
+            <button class="bg-black text-white border border-gray-400 hover:bg-white focus:outline-none rounded focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 hover:text-black py-1 px-4 boton-alto-contraste">Botón con alto contraste</button>
+        </div>
+    </div>
+    <script>
+        const formContainer = document.getElementById('form-container');
+        const formLight = formContainer.querySelector('.form-light');
+        const formDark = formContainer.querySelector('.form-dark');
+
+        // Botones (asegúrate de que los selectores sean correctos)
+        const botonNormal = document.querySelector('.boton-normal');
+        const botonAltoContraste = document.querySelector('.boton-alto-contraste');
+
+        botonNormal.addEventListener('click', () => {
+            formLight.classList.remove('hidden');
+            formDark.classList.add('hidden');
+        });
+
+        botonAltoContraste.addEventListener('click', () => {
+            formLight.classList.add('hidden');
+            formDark.classList.remove('hidden');
+        });
+    </script>
+</body>
+</html>
