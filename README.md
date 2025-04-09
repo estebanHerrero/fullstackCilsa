@@ -2,6 +2,10 @@
 
 En este repositorio se compartirán los proyectos desarrollados durante el curso Fullstack Developer de Cilsa. 
 
+![Ejercicio 1](/ejercicio1.png)
+![Ejercicio 1 modificado](/ejercicio1corregido.png)
+![Form responsive](/formresponsive.png)
+
 **Estructura del repositorio:**
 
 * **ejercicio1:** [Formulario realizado en HTML y Tailwindcss.]
